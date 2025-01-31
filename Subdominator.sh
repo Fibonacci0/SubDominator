@@ -8,7 +8,7 @@ fi
 
 # Display banner
 figlet "SubDominator"
-
+virustotal_api_key="YOUR API KEY HERE"
 # Define target domain
 TARGET="$1"
 
@@ -46,7 +46,7 @@ cat $WAYBACK_FILE | while read sub; do display_subdomain $sub; done
 
 # Get subdomains from VirusTotal
 echo "[*] Collecting subdomains from VirusTotal..."
-virustotal_api_key="982680b1787fa59701919aa22515a025e00df1e3bb2bc4f186b8e919558d576c"
+
 curl -s "https://www.virustotal.com/vtapi/v2/domain/report?apikey=$virustotal_api_key&domain=$TARGET" | \
     jq -r '.subdomains[]' > "$OUTPUT_DIR/virustotal_subdomains.txt"
 cat "$OUTPUT_DIR/virustotal_subdomains.txt" | while read sub; do display_subdomain $sub; done
