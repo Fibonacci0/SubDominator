@@ -7,5 +7,5 @@ Subdomain Enumeration script
 - subfinder
 - alienVaultOTX
 ## Checks if domain is live with dns ping
-- And domain is live, takes a screenshot
+- And if domain is live, takes a screenshot
 ## Don't forget to add your Virustotal API key
